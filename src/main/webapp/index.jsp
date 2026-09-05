@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakshitha Travels 🌈 Car Rentals Hyderabad</title>
+    <title>Rakshitha Travels - Car Rentals Hyderabad</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -25,28 +25,28 @@
             padding: 2rem 1rem;
         }
 
-        /* ---------- MAIN CARD ---------- */
-        .travel-card {
-            max-width: 1300px;
+        /* ---------- MAIN CONTAINER ---------- */
+        .main-container {
+            max-width: 1100px;
             width: 100%;
-            background: rgba(255, 248, 240, 0.85);
+            background: rgba(255, 248, 240, 0.92);
             backdrop-filter: blur(8px);
-            border-radius: 70px 70px 50px 50px;
-            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.4);
-            padding: 2.8rem 3rem;
-            border: 2px solid rgba(255, 200, 150, 0.5);
+            border-radius: 50px 50px 40px 40px;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem 2.8rem;
+            border: 2px solid rgba(255, 200, 150, 0.4);
             position: relative;
             overflow: hidden;
         }
 
-        /* colorful floating blobs */
-        .travel-card::before {
+        /* colorful background blobs */
+        .main-container::before {
             content: '';
             position: absolute;
             top: -20%;
             right: -10%;
-            width: 450px;
-            height: 450px;
+            width: 400px;
+            height: 400px;
             background: radial-gradient(circle, #ffb07c30, #ff6f9130, #b06ab330);
             border-radius: 50%;
             filter: blur(80px);
@@ -54,13 +54,13 @@
             pointer-events: none;
         }
 
-        .travel-card::after {
+        .main-container::after {
             content: '';
             position: absolute;
             bottom: -15%;
             left: -10%;
-            width: 400px;
-            height: 400px;
+            width: 350px;
+            height: 350px;
             background: radial-gradient(circle, #6dd5ed40, #2193b040, #b06ab330);
             border-radius: 50%;
             filter: blur(80px);
@@ -68,7 +68,7 @@
             pointer-events: none;
         }
 
-        .travel-card > * {
+        .main-container > * {
             position: relative;
             z-index: 1;
         }
@@ -79,46 +79,45 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
             border-bottom: 4px dashed #ff9a76;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
         .brand i {
-            font-size: 3.6rem;
+            font-size: 3.2rem;
             color: #ff6b4a;
             background: linear-gradient(145deg, #ffe6d5, #ffd0b5);
-            padding: 16px;
+            padding: 14px;
             border-radius: 50%;
-            box-shadow: 0 10px 20px rgba(255, 100, 50, 0.3);
+            box-shadow: 0 10px 20px rgba(255, 100, 50, 0.25);
             border: 3px solid #ffb07c;
         }
 
         .brand h1 {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, #ff512f, #f09819, #ff6b6b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -1px;
-            text-shadow: 3px 5px 20px rgba(255, 80, 20, 0.2);
         }
 
         .brand span {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
             background: linear-gradient(145deg, #f7971e, #ffd200);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            padding: 0.2rem 1.4rem;
+            padding: 0.2rem 1.2rem;
             border-radius: 60px;
             background-color: #ffeee0;
             -webkit-text-fill-color: #c76b2e;
@@ -127,321 +126,419 @@
         .location-badge {
             background: linear-gradient(145deg, #2b1a12, #4a2c1e);
             color: #ffdccb;
-            padding: 0.8rem 2.2rem;
+            padding: 0.7rem 2rem;
             border-radius: 60px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             border: 2px solid #ffb07c;
         }
 
         .location-badge i {
             color: #ffb07c;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             animation: pulse-loc 2s infinite;
         }
 
         @keyframes pulse-loc {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); color: #ffd966; }
-            100% { transform: scale(1); }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); color: #ffd966; }
         }
 
-        /* ---------- TAGLINE ---------- */
-        .tagline {
-            text-align: center;
-            margin: 1.8rem 0 3rem 0;
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: #3f281e;
-            background: linear-gradient(90deg, #ffecd2, #fcb69f, #ffecd2);
-            padding: 0.9rem 2.5rem;
-            border-radius: 100px;
-            display: inline-block;
-            border: 2px solid #ffb07c;
-            box-shadow: 0 8px 20px rgba(255, 150, 80, 0.25);
-            letter-spacing: 0.5px;
+        /* ---------- SECTION TITLE ---------- */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2c1a10;
+            margin: 1.5rem 0 1.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
 
-        .tagline i {
+        .section-title i {
             color: #ff6b4a;
-            margin: 0 12px;
-            animation: wiggle 1.8s infinite;
+            font-size: 2.5rem;
+            background: linear-gradient(145deg, #ffe6d5, #ffd0b5);
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0 6px 16px rgba(255, 100, 50, 0.15);
         }
 
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(10deg); }
-            75% { transform: rotate(-10deg); }
+        .section-title .highlight {
+            background: linear-gradient(135deg, #ff512f, #f09819);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* ---------- CAR GRID ---------- */
-        .car-grid {
+        /* ---------- RENTAL DETAILS GRID ---------- */
+        .rental-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin: 2.5rem 0 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            background: linear-gradient(135deg, #fff5ee, #ffe8dc);
+            padding: 2rem;
+            border-radius: 40px;
+            margin-bottom: 2rem;
+            border: 2px solid #ffb07c;
+            box-shadow: inset 0 4px 20px rgba(255, 150, 80, 0.1);
         }
 
-        .car-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border-radius: 60px 60px 50px 50px;
-            padding: 2.2rem 2rem 2.8rem;
-            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 3px solid transparent;
+        .detail-item {
             display: flex;
             flex-direction: column;
+            gap: 4px;
+        }
+
+        .detail-item .label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #b45f3a;
+        }
+
+        .detail-item .value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c1a10;
+            display: flex;
             align-items: center;
+            gap: 8px;
+        }
+
+        .detail-item .value i {
+            color: #ff6b4a;
+            font-size: 1.1rem;
+        }
+
+        .detail-item.duration .value {
+            background: linear-gradient(135deg, #ff6b4a, #f09819);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        /* ---------- KM OPTIONS SECTION ---------- */
+        .km-section {
+            background: linear-gradient(135deg, #e8f4f8, #d4eaf0);
+            padding: 2rem;
+            border-radius: 40px;
+            margin: 2rem 0;
+            border: 2px solid #56b4d3;
+            box-shadow: inset 0 4px 20px rgba(33, 147, 176, 0.1);
+        }
+
+        .km-section .title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a4350;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .km-section .title i {
+            color: #2193b0;
+            font-size: 2rem;
+        }
+
+        .km-section .subtitle {
+            font-size: 1.1rem;
+            color: #2c5a6e;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .km-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .km-option {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1a4350;
+            border: 3px solid #56b4d3;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .km-option i {
+            color: #2193b0;
+            font-size: 1.2rem;
+        }
+
+        .km-option:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(33, 147, 176, 0.2);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #2193b0;
+        }
+
+        .km-option.active {
+            background: linear-gradient(145deg, #2193b0, #6dd5ed);
+            color: #fff;
+            border-color: #2193b0;
+            box-shadow: 0 8px 20px rgba(33, 147, 176, 0.3);
+        }
+
+        .km-option.active i {
+            color: #fff;
+        }
+
+        /* ---------- BRAND LOGO SECTION ---------- */
+        .brand-logo-section {
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            margin: 2rem 0 1.8rem;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #fff5ee, #ffe8dc);
+            border-radius: 40px;
+            border: 2px solid #ffb07c;
         }
 
-        .car-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 60px 60px 50px 50px;
-            padding: 3px;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb);
+        .brand-logo-section .logo-text {
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff512f, #f09819, #ff6b6b, #b06ab3);
             background-size: 300% 300%;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            animation: borderFlow 4s ease infinite;
-            pointer-events: none;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+            letter-spacing: 2px;
         }
 
-        @keyframes borderFlow {
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        .car-card:hover {
-            transform: translateY(-16px) scale(1.01);
-            box-shadow: 0 45px 60px -18px rgba(0, 0, 0, 0.35);
-            background: rgba(255, 252, 248, 0.9);
-            border-color: #ffb07c;
+        .brand-logo-section .sub-text {
+            font-size: 1.1rem;
+            color: #4a3225;
+            font-weight: 500;
+            margin-top: 4px;
         }
 
-        /* --- baleno specific colors --- */
-        .car-card.baleno {
+        /* ---------- PLAN SELECTION CARDS ---------- */
+        .plan-section {
+            margin: 2rem 0 1.5rem;
+        }
+
+        .plan-section .plan-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c1a10;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .plan-section .plan-title i {
+            color: #ff6b4a;
+            background: linear-gradient(145deg, #ffe6d5, #ffd0b5);
+            padding: 10px 14px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+        }
+
+        .plan-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(6px);
+            padding: 1.8rem 1.5rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-card:nth-child(1) {
+            border-color: #ff9a76;
             background: linear-gradient(145deg, #fff5ee, #ffe8dc);
         }
-        .car-card.baleno .car-image {
-            background: linear-gradient(145deg, #ffdab9, #ffb07c);
-            color: #6b3a1f;
-        }
-        .car-card.baleno .car-badge {
-            background: linear-gradient(145deg, #ff9a56, #f57c3a);
-            color: #fff;
-        }
-        .car-card.baleno .rent-btn {
-            background: linear-gradient(145deg, #ff7e5f, #feb47b);
-            border-color: #f57c3a;
-        }
-        .car-card.baleno .rent-btn:hover {
-            background: linear-gradient(145deg, #e8684a, #f59a5a);
+
+        .plan-card:nth-child(1):hover {
+            border-color: #ff6b4a;
+            box-shadow: 0 20px 40px rgba(255, 100, 50, 0.15);
         }
 
-        /* --- ertiga specific colors --- */
-        .car-card.ertiga {
+        .plan-card:nth-child(2) {
+            border-color: #56b4d3;
             background: linear-gradient(145deg, #e8f4f8, #d4eaf0);
         }
-        .car-card.ertiga .car-image {
-            background: linear-gradient(145deg, #a8d8ea, #56b4d3);
-            color: #1a4350;
-        }
-        .car-card.ertiga .car-badge {
-            background: linear-gradient(145deg, #2193b0, #6dd5ed);
-            color: #fff;
-        }
-        .car-card.ertiga .rent-btn {
-            background: linear-gradient(145deg, #2193b0, #6dd5ed);
-            border-color: #1f7a94;
-        }
-        .car-card.ertiga .rent-btn:hover {
-            background: linear-gradient(145deg, #1a7a94, #4fb8d1);
+
+        .plan-card:nth-child(2):hover {
+            border-color: #2193b0;
+            box-shadow: 0 20px 40px rgba(33, 147, 176, 0.15);
         }
 
-        .car-image {
-            font-size: 6.5rem;
-            width: 150px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-bottom: 1.4rem;
-            box-shadow: 0 16px 30px -8px rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-            border: 4px solid rgba(255, 255, 255, 0.7);
+        .plan-card:nth-child(3) {
+            border-color: #b06ab3;
+            background: linear-gradient(145deg, #f3e8f5, #e8d4ea);
         }
 
-        .car-card:hover .car-image {
-            transform: scale(1.05) rotate(-3deg);
+        .plan-card:nth-child(3):hover {
+            border-color: #9b4a9e;
+            box-shadow: 0 20px 40px rgba(176, 106, 179, 0.15);
         }
 
-        .car-card h2 {
-            font-size: 2.7rem;
-            font-weight: 800;
-            color: #2c1a10;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.4rem;
+        .plan-card .plan-icon {
+            font-size: 2.8rem;
+            margin-bottom: 0.6rem;
         }
 
-        .car-card.baleno h2 {
-            color: #6b3a1f;
-        }
-        .car-card.ertiga h2 {
-            color: #1a4350;
-        }
+        .plan-card:nth-child(1) .plan-icon { color: #ff6b4a; }
+        .plan-card:nth-child(2) .plan-icon { color: #2193b0; }
+        .plan-card:nth-child(3) .plan-icon { color: #9b4a9e; }
 
-        .car-badge {
-            padding: 0.4rem 2rem;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            margin: 0.2rem 0 0.8rem;
-            display: inline-block;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-        }
-
-        .car-desc {
-            font-size: 1.15rem;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 0.5rem 1.6rem;
-            border-radius: 60px;
-            width: 100%;
-            margin: 0.4rem 0 0.6rem;
-            font-weight: 600;
-            color: #2c1a10;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.6);
-        }
-
-        .car-features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.2rem 2rem;
-            margin: 0.6rem 0 1.2rem;
-            font-size: 1.1rem;
-            background: rgba(255, 255, 255, 0.4);
-            padding: 0.7rem 1.6rem;
-            border-radius: 60px;
-            width: 100%;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .car-features i {
-            margin-right: 8px;
-        }
-        .car-card.baleno .car-features i { color: #d4692c; }
-        .car-card.ertiga .car-features i { color: #1f7a94; }
-
-        .rent-btn {
-            border: none;
+        .plan-card .plan-name {
             font-size: 1.5rem;
             font-weight: 700;
-            padding: 1rem 2.5rem;
+            color: #2c1a10;
+        }
+
+        .plan-card .plan-desc {
+            font-size: 0.95rem;
+            color: #4a3225;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .plan-card .plan-price {
+            margin-top: 12px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            padding: 0.4rem 1.2rem;
             border-radius: 60px;
-            width: 100%;
-            max-width: 240px;
-            cursor: pointer;
-            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.2);
-            transition: all 0.25s ease;
-            margin-top: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            color: #fff;
-            border: 2px solid rgba(255,255,255,0.3);
+            display: inline-block;
         }
 
-        .rent-btn i {
-            font-size: 1.7rem;
-            transition: 0.2s;
+        .plan-card:nth-child(1) .plan-price {
+            color: #b45f3a;
+            background: rgba(255, 150, 80, 0.15);
         }
 
-        .rent-btn:hover {
-            transform: scale(1.04);
-            box-shadow: 0 18px 32px -8px rgba(0, 0, 0, 0.3);
-            gap: 20px;
-            filter: brightness(1.08);
+        .plan-card:nth-child(2) .plan-price {
+            color: #1a5a6e;
+            background: rgba(33, 147, 176, 0.15);
         }
 
-        .rent-btn:active {
-            transform: scale(0.94);
+        .plan-card:nth-child(3) .plan-price {
+            color: #7a3a7e;
+            background: rgba(176, 106, 179, 0.15);
         }
 
-        .price-tag {
+        .plan-card .select-btn {
             margin-top: 14px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            padding: 0.4rem 2rem;
+            padding: 0.7rem 2rem;
+            border: none;
             border-radius: 60px;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(4px);
-            border: 2px dashed #ff9a76;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: #fff;
+            width: 100%;
         }
-        .car-card.baleno .price-tag { color: #8a4e2a; border-color: #f57c3a; }
-        .car-card.ertiga .price-tag { color: #1a5a6e; border-color: #2193b0; }
 
-        /* ---------- CONTACT BAR (colorful) ---------- */
+        .plan-card:nth-child(1) .select-btn {
+            background: linear-gradient(145deg, #ff7e5f, #feb47b);
+        }
+        .plan-card:nth-child(1) .select-btn:hover {
+            background: linear-gradient(145deg, #e8684a, #f59a5a);
+            transform: scale(1.02);
+        }
+
+        .plan-card:nth-child(2) .select-btn {
+            background: linear-gradient(145deg, #2193b0, #6dd5ed);
+        }
+        .plan-card:nth-child(2) .select-btn:hover {
+            background: linear-gradient(145deg, #1a7a94, #4fb8d1);
+            transform: scale(1.02);
+        }
+
+        .plan-card:nth-child(3) .select-btn {
+            background: linear-gradient(145deg, #9b4a9e, #c77dc9);
+        }
+        .plan-card:nth-child(3) .select-btn:hover {
+            background: linear-gradient(145deg, #7a3a7e, #b06ab3);
+            transform: scale(1.02);
+        }
+
+        /* ---------- CONTACT BAR ---------- */
         .contact-bar {
-            margin-top: 4rem;
+            margin-top: 3rem;
             background: linear-gradient(135deg, #2b1a12, #4a2c1e, #2b1a12);
             border-radius: 60px;
-            padding: 1.5rem 2.8rem;
+            padding: 1.2rem 2.5rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             color: #fae3d4;
             border: 3px solid #ffb07c;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
         .contact-bar .info {
             display: flex;
             flex-wrap: wrap;
-            gap: 2.2rem;
-            font-size: 1.15rem;
+            gap: 2rem;
+            font-size: 1.05rem;
             font-weight: 500;
         }
 
         .contact-bar .info i {
             color: #ffb07c;
-            margin-right: 12px;
-            font-size: 1.6rem;
-            transition: 0.2s;
+            margin-right: 10px;
+            font-size: 1.4rem;
         }
 
         .contact-bar .info span {
             display: inline-flex;
             align-items: center;
             background: rgba(255, 255, 255, 0.05);
-            padding: 0.2rem 1.2rem 0.2rem 0.8rem;
+            padding: 0.2rem 1rem 0.2rem 0.6rem;
             border-radius: 60px;
             border: 1px solid #7a4d33;
         }
 
         .contact-bar .social i {
-            font-size: 2.2rem;
-            margin-left: 1.2rem;
+            font-size: 2rem;
+            margin-left: 1rem;
             color: #dba783;
             transition: 0.3s;
             cursor: default;
@@ -452,46 +549,37 @@
 
         .contact-bar .social i:hover {
             color: #fff;
-            transform: scale(1.2) rotate(5deg);
-            background: rgba(255, 180, 120, 0.2);
+            transform: scale(1.15);
+            background: rgba(255, 180, 120, 0.15);
         }
 
         .footer-note {
-            margin-top: 2rem;
+            margin-top: 1.8rem;
             font-size: 1rem;
             color: #3f281e;
             text-align: center;
             border-top: 3px dotted #ffb07c;
-            padding-top: 1.6rem;
+            padding-top: 1.4rem;
             width: 100%;
             font-weight: 500;
-            letter-spacing: 0.3px;
-            background: linear-gradient(90deg, #ffecd2, #fcb69f);
-            border-radius: 60px;
-            padding: 1rem 2rem;
-        }
-
-        .footer-note i {
-            color: #ff6b4a;
-            margin: 0 6px;
         }
 
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 800px) {
-            .travel-card {
+            .main-container {
                 padding: 1.8rem;
                 border-radius: 40px;
             }
             .brand h1 {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
             }
             .brand i {
-                font-size: 2.8rem;
-                padding: 12px;
+                font-size: 2.6rem;
+                padding: 10px;
             }
             .location-badge {
                 font-size: 1rem;
-                padding: 0.4rem 1.4rem;
+                padding: 0.5rem 1.4rem;
                 margin-top: 0.4rem;
             }
             .header {
@@ -499,40 +587,47 @@
                 align-items: start;
                 gap: 12px;
             }
-            .car-grid {
+            .rental-details {
+                grid-template-columns: 1fr 1fr;
+                padding: 1.5rem;
+            }
+            .km-options {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .km-option {
+                justify-content: center;
+            }
+            .plan-cards {
                 grid-template-columns: 1fr;
-                gap: 2.4rem;
             }
             .contact-bar {
                 flex-direction: column;
-                gap: 1.2rem;
+                gap: 1rem;
                 align-items: start;
-                padding: 1.8rem;
+                padding: 1.5rem;
             }
             .contact-bar .info {
                 gap: 1rem;
                 flex-direction: column;
             }
-            .tagline {
-                font-size: 1.2rem;
-                padding: 0.5rem 1.5rem;
+            .section-title {
+                font-size: 1.8rem;
             }
         }
 
         @media (max-width: 480px) {
-            .car-card h2 {
+            .rental-details {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .brand h1 {
+                font-size: 1.8rem;
+            }
+            .brand-logo-section .logo-text {
                 font-size: 2.2rem;
             }
-            .car-image {
-                width: 120px;
-                height: 120px;
-                font-size: 5rem;
-            }
-            .rent-btn {
-                font-size: 1.3rem;
-                padding: 0.8rem 1.5rem;
-            }
-            .travel-card {
+            .main-container {
                 padding: 1.2rem;
             }
         }
@@ -540,7 +635,7 @@
 </head>
 <body>
 
-    <div class="travel-card">
+    <div class="main-container">
 
         <!-- HEADER -->
         <div class="header">
@@ -553,52 +648,88 @@
             </div>
         </div>
 
-        <!-- TAGLINE -->
-        <div style="text-align: center;">
-            <div class="tagline">
-                <i class="fas fa-route"></i> Drive in style · Book Baleno or Ertiga <i class="fas fa-clock"></i>
+        <!-- SECTION: Daily Rentals -->
+        <div class="section-title">
+            <i class="fas fa-calendar-day"></i>
+            <span class="highlight">Daily Rentals</span>
+        </div>
+
+        <!-- RENTAL DETAILS -->
+        <div class="rental-details">
+            <div class="detail-item">
+                <div class="label"><i class="fas fa-map-marker-alt"></i> Location</div>
+                <div class="value">Hyderabad</div>
+            </div>
+            <div class="detail-item">
+                <div class="label"><i class="fas fa-calendar-plus"></i> Pick-Up Date</div>
+                <div class="value"><i class="far fa-calendar-alt"></i> 06-Sep-2026 09:30 AM</div>
+            </div>
+            <div class="detail-item">
+                <div class="label"><i class="fas fa-calendar-check"></i> Return Date</div>
+                <div class="value"><i class="far fa-calendar-alt"></i> 09-Sep-2026 06:30 PM</div>
+            </div>
+            <div class="detail-item duration">
+                <div class="label"><i class="fas fa-clock"></i> Duration</div>
+                <div class="value"><i class="fas fa-hourglass-half"></i> 3 Days and 9 hours</div>
             </div>
         </div>
 
-        <!-- CAR GRID -->
-        <div class="car-grid">
-
-            <!-- BALENO -->
-            <div class="car-card baleno">
-                <div class="car-image">
-                    <i class="fas fa-car"></i>
-                </div>
-                <h2>Baleno</h2>
-                <div class="car-badge"><i class="fas fa-star" style="margin-right: 8px;"></i> Premium Hatchback</div>
-                <div class="car-desc"><i class="fas fa-gas-pump"></i> Petrol · 5-Seater</div>
-                <div class="car-features">
-                    <span><i class="fas fa-snowflake"></i> AC</span>
-                    <span><i class="fas fa-bluetooth-b"></i> Bluetooth</span>
-                    <span><i class="fas fa-shield-alt"></i> Airbags</span>
-                </div>
-                <button class="rent-btn" onclick="alert('✅ Baleno booked! 🚗 Enjoy your ride with Rakshitha Travels.')">
-                    <i class="fas fa-key"></i> Rent Now
-                </button>
-                <div class="price-tag"><i class="fas fa-rupee-sign"></i> 2,499 / day</div>
+        <!-- SECTION: Flexible Kms -->
+        <div class="km-section">
+            <div class="title">
+                <i class="fas fa-road"></i> Flexible Kms options in and around Hyderabad
             </div>
+            <div class="subtitle">
+                <i class="fas fa-check-circle" style="color: #2193b0;"></i>
+                Freedom to choose between 120 kms, 300 kms and Unlimited kms as per your travel needs.
+            </div>
+            <div class="km-options">
+                <div class="km-option" onclick="selectKm(this)">
+                    <i class="fas fa-tachometer-alt"></i> 120 kms/day
+                </div>
+                <div class="km-option active" onclick="selectKm(this)">
+                    <i class="fas fa-tachometer-alt"></i> 300 kms/day
+                </div>
+                <div class="km-option" onclick="selectKm(this)">
+                    <i class="fas fa-infinity"></i> Unlimited kms
+                </div>
+            </div>
+        </div>
 
-            <!-- ERTIGA -->
-            <div class="car-card ertiga">
-                <div class="car-image">
-                    <i class="fas fa-van-shuttle"></i>
+        <!-- BRAND LOGO: MYCHIZE - SELF DRIVE CARS -->
+        <div class="brand-logo-section">
+            <div class="logo-text">MYCHIZE</div>
+            <div class="sub-text"><i class="fas fa-steering-wheel"></i> SELF DRIVE CARS</div>
+        </div>
+
+        <!-- SECTION: Choose Your Plan -->
+        <div class="plan-section">
+            <div class="plan-title">
+                <i class="fas fa-crown"></i>
+                Choose Your Plan
+            </div>
+            <div class="plan-cards">
+                <div class="plan-card">
+                    <div class="plan-icon"><i class="fas fa-road"></i></div>
+                    <div class="plan-name">120 kms/day</div>
+                    <div class="plan-desc">Perfect for city commutes</div>
+                    <div class="plan-price">₹ 1,999 / day</div>
+                    <button class="select-btn" onclick="alert('✅ 120 kms/day plan selected!')">Select Plan</button>
                 </div>
-                <h2>Ertiga</h2>
-                <div class="car-badge"><i class="fas fa-users" style="margin-right: 8px;"></i> Family MPV</div>
-                <div class="car-desc"><i class="fas fa-gas-pump"></i> Petrol · 7-Seater</div>
-                <div class="car-features">
-                    <span><i class="fas fa-snowflake"></i> AC</span>
-                    <span><i class="fas fa-video"></i> Rear Camera</span>
-                    <span><i class="fas fa-child"></i> Child Lock</span>
+                <div class="plan-card">
+                    <div class="plan-icon"><i class="fas fa-route"></i></div>
+                    <div class="plan-name">300 kms/day</div>
+                    <div class="plan-desc">Ideal for weekend getaways</div>
+                    <div class="plan-price">₹ 2,499 / day</div>
+                    <button class="select-btn" onclick="alert('✅ 300 kms/day plan selected!')">Select Plan</button>
                 </div>
-                <button class="rent-btn" onclick="alert('✅ Ertiga booked! 👨‍👩‍👧‍👦 Perfect for family trips.')">
-                    <i class="fas fa-key"></i> Rent Now
-                </button>
-                <div class="price-tag"><i class="fas fa-rupee-sign"></i> 3,299 / day</div>
+                <div class="plan-card">
+                    <div class="plan-icon"><i class="fas fa-infinity"></i></div>
+                    <div class="plan-name">Unlimited kms</div>
+                    <div class="plan-desc">Drive without limits</div>
+                    <div class="plan-price">₹ 3,499 / day</div>
+                    <button class="select-btn" onclick="alert('✅ Unlimited kms plan selected!')">Select Plan</button>
+                </div>
             </div>
         </div>
 
@@ -618,18 +749,27 @@
         </div>
 
         <div class="footer-note">
-            <i class="fas fa-check-circle"></i> 
+            <i class="fas fa-check-circle" style="color: #ff6b4a;"></i>
             Rakshitha Travels · Hyderabad · 2 cars available — Baleno &amp; Ertiga
-            <span style="display: inline-block; margin-left: 14px; background: #ffb07c40; padding: 0 18px; border-radius: 60px; border: 1px solid #ffb07c;">
+            <span style="display: inline-block; margin-left: 14px; background: #ffb07c30; padding: 0 16px; border-radius: 60px; border: 1px solid #ffb07c;">
                 <i class="fas fa-car"></i> 2 vehicles
-            </span>
-            <span style="display: inline-block; margin-left: 10px; background: #6dd5ed40; padding: 0 14px; border-radius: 60px;">
-                <i class="fas fa-star" style="color: #ffd700;"></i> 4.9 ⭐
             </span>
         </div>
 
     </div>
-    <!-- end travel-card -->
+    <!-- end main-container -->
+
+    <script>
+        // KM option selection
+        function selectKm(element) {
+            // Remove active class from all km options
+            document.querySelectorAll('.km-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+            // Add active class to clicked option
+            element.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
