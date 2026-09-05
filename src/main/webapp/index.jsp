@@ -1,512 +1,477 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SnapChat · Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshitha Travels - Car Rentals Hyderabad</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* ---------- RESET & BASE ---------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: #fff8f0;
+            background: linear-gradient(145deg, #f9f3e8 0%, #ffe9d6 100%);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
+            padding: 2rem 1rem;
         }
 
-        .snap-card {
-            max-width: 440px;
+        /* ---------- MAIN CARD ---------- */
+        .travel-card {
+            max-width: 1300px;
             width: 100%;
-            background: #ffffff;
-            border-radius: 48px 48px 32px 32px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(255, 215, 0, 0.12);
-            padding: 2.2rem 2rem 2.5rem;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            transition: box-shadow 0.3s ease;
+            background: rgba(255, 245, 235, 0.75);
+            backdrop-filter: blur(4px);
+            border-radius: 60px 60px 40px 40px;
+            box-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+            padding: 2.5rem 2.8rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 215, 175, 0.5);
         }
 
-        .snap-card.success-mode {
-            box-shadow: 0 0 0 4px #fffc00, 0 20px 40px rgba(0, 0, 0, 0.1);
+        /* ---------- HEADER ---------- */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.8rem;
+            border-bottom: 3px dashed #e6b48c;
+            padding-bottom: 1.2rem;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 1.5rem;
+            gap: 14px;
         }
 
-        .ghost-icon {
-            font-size: 2.4rem;
-            color: #fffc00;
-            background: #1a1a1a;
-            width: 58px;
-            height: 58px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.25);
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .ghost-icon:hover {
-            transform: scale(1.05);
+        .brand i {
+            font-size: 3.2rem;
+            color: #b45f3a;
+            background: #fce3d0;
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0 8px 14px rgba(160, 90, 50, 0.2);
         }
 
         .brand h1 {
+            font-size: 2.9rem;
             font-weight: 700;
-            font-size: 2.1rem;
             letter-spacing: -0.5px;
-            color: #1a1a1a;
+            background: linear-gradient(135deg, #6b3e26, #b45f3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 4px 12px rgba(180, 95, 58, 0.15);
         }
 
-        .brand h1 span {
-            color: #fffc00;
-            background: #1a1a1a;
-            padding: 0 10px;
-            border-radius: 40px;
-            font-size: 1.8rem;
-        }
-
-        .subhead {
-            text-align: center;
-            color: #7a7a7a;
-            font-weight: 500;
-            font-size: 0.95rem;
-            margin-top: -0.3rem;
-            margin-bottom: 1.8rem;
-            letter-spacing: 0.3px;
-        }
-
-        .input-group {
-            margin-bottom: 1.4rem;
-            position: relative;
-        }
-
-        .input-group i {
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #b0b0b0;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 1rem 1rem 1rem 3.2rem;
-            font-size: 1rem;
-            border: 2px solid #ececec;
+        .brand span {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #7a4d33;
+            background: #ffe1cc;
+            padding: 0.2rem 1.2rem;
             border-radius: 60px;
-            background: #fafafa;
-            outline: none;
-            transition: all 0.25s ease;
-            color: #1a1a1a;
+            margin-left: 8px;
+            -webkit-text-fill-color: #7a4d33;
+        }
+
+        .location-badge {
+            background: #2b1a12;
+            color: #f7dccb;
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-size: 1.2rem;
             font-weight: 500;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .input-group input:focus {
-            border-color: #fffc00;
-            background: #ffffff;
-            box-shadow: 0 0 0 5px rgba(255, 252, 0, 0.15);
+        .location-badge i {
+            color: #f5b183;
+            font-size: 1.6rem;
         }
 
-        .input-group input::placeholder {
-            color: #bdbdbd;
+        /* ---------- TAGLINE ---------- */
+        .tagline {
+            text-align: center;
+            margin: 1.5rem 0 2.8rem 0;
+            font-size: 1.5rem;
             font-weight: 400;
-            opacity: 0.8;
+            color: #3f281e;
+            background: rgba(255, 215, 185, 0.5);
+            padding: 0.8rem 2rem;
+            border-radius: 100px;
+            backdrop-filter: blur(2px);
+            display: inline-block;
+            letter-spacing: 1px;
+            border: 1px solid #f5cfb6;
         }
 
-        .password-wrapper {
-            position: relative;
+        .tagline i {
+            color: #b45f3a;
+            margin: 0 10px;
         }
 
-        .password-wrapper i.fa-eye,
-        .password-wrapper i.fa-eye-slash {
-            position: absolute;
-            right: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #b0b0b0;
-            cursor: pointer;
-            font-size: 1.1rem;
-            z-index: 5;
-            transition: color 0.2s;
+        /* ---------- CAR GRID ---------- */
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.8rem;
+            margin: 2rem 0 1rem;
         }
 
-        .password-wrapper i:hover {
-            color: #1a1a1a;
+        .car-card {
+            background: #ffffffdd;
+            backdrop-filter: blur(6px);
+            border-radius: 50px 50px 40px 40px;
+            padding: 1.8rem 1.8rem 2.5rem;
+            box-shadow: 0 20px 30px -10px rgba(90, 50, 30, 0.2), 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.3s;
+            border: 1px solid rgba(255, 215, 175, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
-        .login-btn {
-            width: 100%;
-            padding: 1rem;
-            background: #fffc00;
-            border: none;
-            border-radius: 60px;
+        .car-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 40px 45px -18px rgba(110, 65, 40, 0.4);
+            background: #fffaf5;
+            border-color: #dba783;
+        }
+
+        .car-image {
+            font-size: 6rem;
+            color: #3d281e;
+            background: #f5dccb;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.2rem;
+            box-shadow: inset 0 -6px 0 #ccaa8f, 0 14px 20px -8px rgba(80, 45, 25, 0.3);
+            transition: 0.2s;
+        }
+
+        .car-card:hover .car-image {
+            background: #fce2d1;
+            box-shadow: inset 0 -6px 0 #b48362, 0 18px 25px -8px #8a5e42;
+        }
+
+        .car-card h2 {
+            font-size: 2.5rem;
             font-weight: 700;
-            font-size: 1.15rem;
-            color: #1a1a1a;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 6px 0 #d9d600, 0 6px 12px rgba(255, 215, 0, 0.3);
-            margin-top: 0.5rem;
-            letter-spacing: 0.3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            color: #341f15;
+            letter-spacing: -0.5px;
+            border-bottom: 3px dotted #e6b48c;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.6rem;
         }
 
-        .login-btn:active {
-            transform: translateY(4px);
-            box-shadow: 0 2px 0 #d9d600, 0 6px 12px rgba(255, 215, 0, 0.2);
-        }
-
-        .login-btn:hover {
-            background: #f5f000;
-            box-shadow: 0 6px 0 #c9c600, 0 8px 16px rgba(255, 215, 0, 0.4);
-        }
-
-        .message-box {
-            margin-top: 1.5rem;
-            padding: 0.8rem 1rem;
+        .car-badge {
+            background: #cc9f82;
+            color: #1f140e;
+            padding: 0.3rem 1.8rem;
             border-radius: 60px;
-            font-weight: 500;
-            text-align: center;
-            font-size: 0.92rem;
-            background: #f8f8f8;
-            color: #3a3a3a;
-            border: 1px solid #eaeaea;
-            min-height: 3.6rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .message-box.success {
-            background: #eaffea;
-            border-color: #9fdf9f;
-            color: #1f7a1f;
-        }
-
-        .message-box.error {
-            background: #ffe9e9;
-            border-color: #ffb3b3;
-            color: #b33c3c;
-        }
-
-        .message-box.info {
-            background: #eef6ff;
-            border-color: #b8d0ff;
-            color: #1f4f8a;
-        }
-
-        /* ===== IMAGE CONTAINER ===== */
-        #imageContainer {
-            display: none;
-            margin-top: 1.8rem;
-            padding: 1.2rem;
-            border-radius: 24px;
-            background: #fcf9f0;
-            border: 3px solid #fffc00;
-            text-align: center;
-            animation: fadeInUp 0.6s ease;
-        }
-
-        #imageContainer img {
-            max-width: 100%;
-            height: auto;
-            max-height: 300px;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-            object-fit: cover;
-        }
-
-        #imageContainer .image-caption {
-            margin-top: 0.8rem;
-            color: #1a1a1a;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            margin: 0.4rem 0 0.9rem;
+            display: inline-block;
+            box-shadow: inset 0 -2px 0 #a7785b;
         }
 
-        #imageContainer .image-sub {
-            color: #777;
-            font-size: 0.8rem;
-            margin-top: 0.2rem;
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px) scale(0.96); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-8px); }
-            50% { transform: translateX(8px); }
-            75% { transform: translateX(-4px); }
-            100% { transform: translateX(0); }
-        }
-
-        .extra-links {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
-            color: #8a8a8a;
-        }
-
-        .extra-links a {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 2px solid transparent;
-            transition: border 0.15s;
-            padding-bottom: 2px;
-        }
-
-        .extra-links a:hover {
-            border-bottom-color: #fffc00;
-        }
-
-        .cred-hint {
-            background: #fcf9f0;
-            border-radius: 40px;
+        .car-desc {
+            font-size: 1.1rem;
+            color: #4a3225;
+            background: #f7e7db;
             padding: 0.6rem 1.2rem;
-            font-size: 0.8rem;
-            color: #6a6a6a;
-            border: 1px dashed #ddd3b0;
-            text-align: center;
-            margin-top: 1.2rem;
+            border-radius: 60px;
+            width: 100%;
+            margin: 0.6rem 0 0.8rem;
+            font-weight: 500;
+        }
+
+        .car-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            margin: 0.8rem 0 1.2rem;
+            font-size: 1.1rem;
+            color: #341f15;
+            background: #f2ddd0;
+            padding: 0.7rem 1.2rem;
+            border-radius: 60px;
             width: 100%;
         }
 
-        .cred-hint i {
-            color: #fffc00;
+        .car-features i {
+            color: #b45f3a;
             margin-right: 6px;
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 480px) {
-            .snap-card {
-                padding: 1.8rem 1.2rem 2rem;
-                border-radius: 32px;
+        .rent-btn {
+            background: #b45f3a;
+            border: none;
+            color: #fff8f0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            width: 100%;
+            max-width: 220px;
+            cursor: pointer;
+            box-shadow: 0 10px 18px -6px #7a4d33;
+            transition: 0.2s;
+            margin-top: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: 1px solid #dba17b;
+        }
+
+        .rent-btn i {
+            font-size: 1.6rem;
+            transition: 0.2s;
+        }
+
+        .rent-btn:hover {
+            background: #9f4f2e;
+            transform: scale(1.02);
+            box-shadow: 0 14px 22px -6px #5d3a27;
+            color: white;
+            gap: 18px;
+        }
+
+        .rent-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* ---------- FOOTER / CONTACT ---------- */
+        .contact-bar {
+            margin-top: 3.8rem;
+            background: #271b15;
+            border-radius: 60px;
+            padding: 1.2rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: #fae3d4;
+            border: 1px solid #b48362;
+        }
+
+        .contact-bar .info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-bar .info i {
+            color: #e6b48c;
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+
+        .contact-bar .info span {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .contact-bar .social i {
+            font-size: 2rem;
+            margin-left: 1rem;
+            color: #dba783;
+            transition: 0.2s;
+            cursor: default;
+        }
+
+        .contact-bar .social i:hover {
+            color: #f7dccb;
+            transform: scale(1.2);
+        }
+
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.95rem;
+            color: #4f372a;
+            text-align: center;
+            border-top: 1px solid #dbbca5;
+            padding-top: 1.4rem;
+            width: 100%;
+            letter-spacing: 0.3px;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 760px) {
+            .travel-card {
+                padding: 1.8rem;
+                border-radius: 40px;
             }
             .brand h1 {
-                font-size: 1.7rem;
+                font-size: 2.2rem;
             }
-            .ghost-icon {
-                width: 50px;
-                height: 50px;
+            .brand i {
+                font-size: 2.5rem;
+                padding: 10px;
+            }
+            .location-badge {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                margin-top: 0.5rem;
+            }
+            .header {
+                flex-direction: column;
+                align-items: start;
+                gap: 12px;
+            }
+            .car-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .contact-bar {
+                flex-direction: column;
+                gap: 1.2rem;
+                align-items: start;
+                padding: 1.5rem;
+            }
+            .contact-bar .info {
+                gap: 1rem;
+                flex-direction: column;
+            }
+            .tagline {
+                font-size: 1.2rem;
+                padding: 0.4rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .car-card h2 {
                 font-size: 2rem;
             }
-            #imageContainer img {
-                max-height: 200px;
+            .car-image {
+                width: 110px;
+                height: 110px;
+                font-size: 4.5rem;
+            }
+            .rent-btn {
+                font-size: 1.2rem;
+                padding: 0.7rem 1.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="snap-card" id="snapCard">
-    <!-- Brand -->
-    <div class="brand">
-        <div class="ghost-icon" id="resetBtn" title="Click to reset">
-            <i class="fas fa-ghost"></i>
-        </div>
-        <h1>Snap<span>Chat</span></h1>
-    </div>
-    <p class="subhead"><i class="fas fa-bolt" style="color: #fffc00; margin-right: 6px;"></i> log in to snap</p>
+    <div class="travel-card">
 
-    <!-- Login Form -->
-    <form id="loginForm" autocomplete="off">
-        <div class="input-group">
-            <i class="fas fa-user-circle"></i>
-            <input type="text" id="username" placeholder="Username" value="ganesh" />
+        <!-- HEADER -->
+        <div class="header">
+            <div class="brand">
+                <i class="fas fa-car-side"></i>
+                <h1>Rakshitha <span>Travels</span></h1>
+            </div>
+            <div class="location-badge">
+                <i class="fas fa-map-pin"></i> Hyderabad
+            </div>
         </div>
 
-        <div class="input-group password-wrapper">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="password" placeholder="Password" value="ganesh@123" />
-            <i class="fas fa-eye" id="togglePassword"></i>
+        <!-- TAGLINE -->
+        <div style="text-align: center;">
+            <div class="tagline">
+                <i class="fas fa-route"></i> Drive with comfort · Rent by the day or week <i class="fas fa-clock"></i>
+            </div>
         </div>
 
-        <button type="submit" class="login-btn" id="loginBtn">
-            <i class="fas fa-arrow-right-to-bracket"></i> Log In
-        </button>
-    </form>
+        <!-- CAR GRID -->
+        <div class="car-grid">
 
-    <!-- Message Box -->
-    <div id="messageBox" class="message-box info">
-        <i class="fas fa-info-circle"></i> 
-        <span id="messageText">use ganesh / ganesh@123</span>
+            <!-- BALENO -->
+            <div class="car-card">
+                <div class="car-image">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h2>Baleno</h2>
+                <div class="car-badge"><i class="fas fa-star" style="margin-right: 6px;"></i> Premium Hatchback</div>
+                <div class="car-desc"><i class="fas fa-gas-pump"></i> Petrol · 5-Seater</div>
+                <div class="car-features">
+                    <span><i class="fas fa-snowflake"></i> AC</span>
+                    <span><i class="fas fa-bluetooth-b"></i> Bluetooth</span>
+                    <span><i class="fas fa-shield-alt"></i> Airbags</span>
+                </div>
+                <button class="rent-btn" onclick="alert('✅ Baleno booked for rent! (Demo)')">
+                    <i class="fas fa-key"></i> Rent Now
+                </button>
+                <p style="margin-top: 12px; font-weight: 500; color: #3f281e; background: #ecddcf; padding: 0.2rem 1.6rem; border-radius: 60px;">
+                    <i class="fas fa-rupee-sign"></i> 2,499 / day
+                </p>
+            </div>
+
+            <!-- ERTIGA -->
+            <div class="car-card">
+                <div class="car-image">
+                    <i class="fas fa-van-shuttle"></i>
+                </div>
+                <h2>Ertiga</h2>
+                <div class="car-badge"><i class="fas fa-users" style="margin-right: 6px;"></i> Family MPV</div>
+                <div class="car-desc"><i class="fas fa-gas-pump"></i> Petrol · 7-Seater</div>
+                <div class="car-features">
+                    <span><i class="fas fa-snowflake"></i> AC</span>
+                    <span><i class="fas fa-video"></i> Rear Camera</span>
+                    <span><i class="fas fa-child"></i> Child Lock</span>
+                </div>
+                <button class="rent-btn" onclick="alert('✅ Ertiga booked for rent! (Demo)')">
+                    <i class="fas fa-key"></i> Rent Now
+                </button>
+                <p style="margin-top: 12px; font-weight: 500; color: #3f281e; background: #ecddcf; padding: 0.2rem 1.6rem; border-radius: 60px;">
+                    <i class="fas fa-rupee-sign"></i> 3,299 / day
+                </p>
+            </div>
+        </div>
+
+        <!-- CONTACT & FOOTER -->
+        <div class="contact-bar">
+            <div class="info">
+                <span><i class="fas fa-phone-alt"></i> +91 98765 43210</span>
+                <span><i class="fas fa-envelope"></i> rakshitha.cars@hyderabad.in</span>
+                <span><i class="fas fa-clock"></i> 6:00 AM – 11:00 PM</span>
+            </div>
+            <div class="social">
+                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <i class="fas fa-check-circle" style="color: #b45f3a;"></i> 
+            Rakshitha Travels · Hyderabad · Two cars available — Baleno &amp; Ertiga
+            <span style="display: inline-block; margin-left: 12px; background: #b45f3a20; padding: 0 14px; border-radius: 60px;">
+                <i class="fas fa-car"></i> 2 vehicles
+            </span>
+        </div>
+
     </div>
-
-    <!-- ===== IMAGE CONTAINER ===== -->
-    <!-- 
-      ⚠️ IMPORTANT: To use your own image:
-      1. Go to https://www.pinterest.com/123greetings/april-fools-day/
-      2. Click on any image you like
-      3. Right-click → "Open image in new tab"
-      4. Copy the URL from the new tab (it will end in .jpg, .png, etc.)
-      5. Replace the src="" below with your copied URL
-    -->
-    <div id="imageContainer">
-        <img id="loginImage" 
-             src="https://picsum.photos/seed/aprilfools/500/350" 
-             alt="April Fools Image" 
-        />
-        <p class="image-caption">🎉 Login Successful! Here's your image.</p>
-        <p class="image-sub">Image from Pinterest board</p>
-    </div>
-
-    <!-- Extra Links -->
-    <div class="extra-links">
-        <a href="#"><i class="far fa-question-circle"></i> Forgot?</a>
-        <a href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
-    </div>
-
-    <div class="cred-hint">
-        <i class="fas fa-key"></i> demo: ganesh / ganesh@123
-    </div>
-</div>
-
-<script>
-    (function() {
-        "use strict";
-
-        const usernameInput = document.getElementById('username');
-        const passwordInput = document.getElementById('password');
-        const loginForm = document.getElementById('loginForm');
-        const messageBox = document.getElementById('messageBox');
-        const messageText = document.getElementById('messageText');
-        const togglePassword = document.getElementById('togglePassword');
-        const imageContainer = document.getElementById('imageContainer');
-        const snapCard = document.getElementById('snapCard');
-
-        const VALID_USERNAME = 'ganesh';
-        const VALID_PASSWORD = 'ganesh@123';
-
-        // ===== Set message function =====
-        function setMessage(msg, type = 'info') {
-            messageBox.classList.remove('success', 'error', 'info');
-            if (type === 'success') {
-                messageBox.classList.add('success');
-                messageBox.innerHTML = `<i class="fas fa-check-circle"></i> <span id="messageText">${msg}</span>`;
-            } else if (type === 'error') {
-                messageBox.classList.add('error');
-                messageBox.innerHTML = `<i class="fas fa-exclamation-circle"></i> <span id="messageText">${msg}</span>`;
-            } else {
-                messageBox.classList.add('info');
-                messageBox.innerHTML = `<i class="fas fa-info-circle"></i> <span id="messageText">${msg}</span>`;
-            }
-        }
-
-        // ===== Login handler =====
-        function handleLogin(e) {
-            e.preventDefault();
-
-            const username = usernameInput.value.trim();
-            const password = passwordInput.value;
-
-            if (username === '' || password === '') {
-                setMessage('Please fill in both fields.', 'error');
-                imageContainer.style.display = 'none';
-                snapCard.classList.remove('success-mode');
-                return;
-            }
-
-            if (username === VALID_USERNAME && password === VALID_PASSWORD) {
-                setMessage('✅ Login successful! Welcome, Ganesh.', 'success');
-                
-                // ===== SHOW THE IMAGE =====
-                imageContainer.style.display = 'block';
-                // Re-trigger animation
-                imageContainer.style.animation = 'none';
-                setTimeout(() => {
-                    imageContainer.style.animation = 'fadeInUp 0.6s ease';
-                }, 10);
-                
-                // Highlight card
-                snapCard.classList.add('success-mode');
-                
-            } else {
-                let errorMsg = '❌ Invalid username or password.';
-                if (username === VALID_USERNAME && password !== VALID_PASSWORD) {
-                    errorMsg = '❌ Wrong password. Try again.';
-                } else if (username !== VALID_USERNAME && password === VALID_PASSWORD) {
-                    errorMsg = '❌ Username not recognized.';
-                }
-                setMessage(errorMsg, 'error');
-                imageContainer.style.display = 'none';
-                snapCard.classList.remove('success-mode');
-                
-                // Shake animation
-                snapCard.style.animation = 'shake 0.3s ease';
-                setTimeout(() => snapCard.style.animation = '', 400);
-            }
-        }
-
-        // ===== Toggle password visibility =====
-        togglePassword.addEventListener('click', function() {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            this.classList.toggle('fa-eye-slash');
-            this.classList.toggle('fa-eye');
-        });
-
-        // ===== Clear error on input =====
-        function clearErrorOnInput() {
-            if (messageBox.classList.contains('error')) {
-                setMessage('Enter credentials and tap Log In.', 'info');
-                imageContainer.style.display = 'none';
-                snapCard.classList.remove('success-mode');
-            }
-        }
-
-        usernameInput.addEventListener('input', clearErrorOnInput);
-        passwordInput.addEventListener('input', clearErrorOnInput);
-
-        // ===== Submit =====
-        loginForm.addEventListener('submit', handleLogin);
-
-        // ===== Default message =====
-        setMessage('use ganesh / ganesh@123', 'info');
-
-        // ===== Reset on ghost click =====
-        document.querySelector('.ghost-icon').addEventListener('click', function() {
-            setMessage('👻 Reset! Enter ganesh / ganesh@123', 'info');
-            usernameInput.value = 'ganesh';
-            passwordInput.value = 'ganesh@123';
-            imageContainer.style.display = 'none';
-            snapCard.classList.remove('success-mode');
-            if (passwordInput.getAttribute('type') === 'text') {
-                passwordInput.setAttribute('type', 'password');
-                togglePassword.classList.remove('fa-eye-slash');
-                togglePassword.classList.add('fa-eye');
-            }
-            snapCard.style.animation = '';
-        });
-
-        console.log('🔐 SnapChat login ready. Valid: ganesh / ganesh@123');
-
-    })();
-</script>
+    <!-- end travel-card -->
 
 </body>
 </html>
