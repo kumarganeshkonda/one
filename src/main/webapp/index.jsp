@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Marry Me?</title>
+    <title>Will You Be Mine Forever?</title>
     <style>
         * {
             margin: 0;
@@ -33,7 +33,6 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* Multi-colored title */
         .rainbow-title {
             font-size: 42px;
             font-weight: 800;
@@ -226,7 +225,6 @@
         .multi-color-text .c7 { color: #00b894; }
         .multi-color-text .c8 { color: #e17055; }
 
-        /* Disabled button styles */
         .btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -246,7 +244,6 @@
 <body>
 
 <div class="proposal-card">
-    <!-- Multi-colored title -->
     <div class="rainbow-title">
         <span class="letter">A</span>
         <span class="letter"></span>
@@ -268,7 +265,6 @@
         <span class="letter">N</span>
     </div>
 
-    <!-- Multi-colored subtitle -->
     <div class="multi-color-text" style="font-size: 22px; margin: 5px 0 15px;">
         <span class="c1">F</span>
         <span class="c2">O</span>
@@ -302,7 +298,7 @@
     </div>
 
     <div class="question" id="questionText">
-        WILL YOU MARRY ME?
+        WILL YOU BE MINE FOREVER?
     </div>
 
     <div class="button-group" id="buttonGroup">
@@ -313,7 +309,7 @@
     <div id="responseArea" class="response-area hidden">
         <div class="response-emoji-text" id="responseEmoji">💞</div>
         <div class="message" id="responseMessage">
-            <span class="highlight-yes">YES!</span> A THOUSAND TIMES <span class="highlight-yes">YES!</span>
+            <span class="highlight-yes">YES!</span> FOREVER AND ALWAYS!
         </div>
         <div class="sub" id="responseSub">You made me the happiest person alive</div>
     </div>
@@ -335,7 +331,6 @@
         const questionText = document.getElementById('questionText');
         const originalQuestion = questionText.innerHTML;
 
-        // Function to make NO button flee
         function fleeNoButton() {
             if (noBtn.disabled) return;
 
@@ -352,7 +347,6 @@
             let randomX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
             let randomY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
 
-            // Avoid overlapping with YES button
             const yesRect = yesBtn.getBoundingClientRect();
             const yesCenterX = yesRect.left + yesRect.width / 2;
             const yesCenterY = yesRect.top + yesRect.height / 2;
@@ -376,7 +370,6 @@
             noBtn.style.boxShadow = '0 8px 0 #e17055, 0 15px 35px rgba(0,0,0,0.2)';
         }
 
-        // Reset NO button position
         function resetNoButtonPosition() {
             noBtn.style.position = '';
             noBtn.style.left = '';
@@ -386,20 +379,16 @@
             noBtn.style.boxShadow = '';
         }
 
-        // Handle NO button interaction
         function handleNoInteraction(e) {
             if (noBtn.disabled) return;
             if (yesBtn.disabled && yesBtn.innerHTML.includes('DONE')) return;
 
-            // Flee!
             fleeNoButton();
 
-            // Update question text
             if (!questionText.innerHTML.includes('CATCH')) {
                 questionText.innerHTML = 'CATCH ME IF YOU CAN!';
             }
 
-            // Show response area
             responseArea.classList.remove('hidden');
             responseEmoji.textContent = '🏃';
             responseMessage.innerHTML = '<span class="highlight-no">NO!</span> THE BUTTON IS FAST!';
@@ -414,22 +403,18 @@
             }
         }
 
-        // Handle YES button click
         function handleYesClick(e) {
             e.preventDefault();
 
-            // Reset NO button to normal position
             resetNoButtonPosition();
             noBtn.innerHTML = 'NO';
             questionText.innerHTML = originalQuestion;
 
-            // Show acceptance response
             responseArea.classList.remove('hidden');
             responseEmoji.textContent = '💞';
-            responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> A THOUSAND TIMES <span class="highlight-yes">YES!</span>';
+            responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> FOREVER AND ALWAYS!';
             responseSub.innerHTML = 'You made me the happiest person alive';
 
-            // Disable both buttons
             noBtn.disabled = true;
             noBtn.style.opacity = '0.4';
             noBtn.style.cursor = 'default';
@@ -442,10 +427,8 @@
             yesBtn.style.cursor = 'default';
         }
 
-        // Event Listeners
         yesBtn.addEventListener('click', handleYesClick);
 
-        // NO button - click to flee
         noBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -453,14 +436,12 @@
             handleNoInteraction(e);
         });
 
-        // NO button - hover to flee
         noBtn.addEventListener('mouseover', function(e) {
             if (noBtn.disabled) return;
             if (yesBtn.disabled && yesBtn.innerHTML.includes('DONE')) return;
             handleNoInteraction(e);
         });
 
-        // Reset NO button text when mouse leaves
         noBtn.addEventListener('mouseleave', function() {
             if (noBtn.disabled) return;
             if (!noBtn.innerHTML.includes('CATCH')) {
@@ -468,7 +449,6 @@
             }
         });
 
-        // Keep fleeing button inside viewport on resize
         window.addEventListener('resize', function() {
             if (noBtn.style.position === 'fixed') {
                 const rect = noBtn.getBoundingClientRect();
@@ -486,10 +466,8 @@
             }
         });
 
-        // Prevent right-click on NO button
         noBtn.addEventListener('contextmenu', (e) => e.preventDefault());
 
-        // Initialize state
         responseArea.classList.add('hidden');
         resetNoButtonPosition();
         noBtn.disabled = false;
@@ -501,7 +479,7 @@
         yesBtn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
         yesBtn.style.boxShadow = '0 6px 25px rgba(0, 206, 201, 0.4)';
         responseEmoji.textContent = '💞';
-        responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> A THOUSAND TIMES <span class="highlight-yes">YES!</span>';
+        responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> FOREVER AND ALWAYS!';
         responseSub.innerHTML = 'You made me the happiest person alive';
         questionText.innerHTML = originalQuestion;
     })();
