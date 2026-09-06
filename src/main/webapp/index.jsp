@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be Mine Forever?</title>
+    <title>Romantic Date Invitation ❤️</title>
     <style>
         * {
             margin: 0;
@@ -27,7 +27,7 @@
             border-radius: 60px 60px 40px 40px;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
             padding: 50px 40px 35px;
-            max-width: 650px;
+            max-width: 700px;
             width: 100%;
             text-align: center;
             border: 2px solid rgba(255, 255, 255, 0.3);
@@ -68,9 +68,9 @@
         }
 
         .question {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
-            padding: 18px 30px;
+            padding: 20px 30px;
             border-radius: 80px;
             display: inline-block;
             margin: 10px auto 30px;
@@ -79,12 +79,41 @@
             animation: gradientMove 4s ease infinite;
             color: white;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            line-height: 1.4;
         }
 
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        .date-details {
+            background: rgba(108, 92, 231, 0.08);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 10px 0 20px;
+            border: 2px dashed #a29bfe;
+        }
+
+        .date-details .detail {
+            font-size: 18px;
+            color: #2d3436;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .date-details .detail .icon {
+            font-size: 24px;
+        }
+
+        .date-details .detail .label {
+            font-weight: 600;
+            color: #6c5ce7;
         }
 
         .button-group {
@@ -231,13 +260,37 @@
             transform: none !important;
         }
 
+        .floating-hearts {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .heart-particle {
+            position: absolute;
+            font-size: 24px;
+            animation: floatUp 3s ease-in forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
         @media (max-width: 550px) {
             .proposal-card { padding: 30px 20px; }
             .rainbow-title { font-size: 30px; }
-            .question { font-size: 22px; padding: 14px 20px; }
+            .question { font-size: 20px; padding: 14px 20px; }
             .btn { font-size: 18px; padding: 14px 30px; min-width: 120px; }
             .button-group { gap: 15px; }
             .response-area .message { font-size: 22px; }
+            .date-details .detail { font-size: 15px; }
         }
     </style>
 </head>
@@ -245,20 +298,17 @@
 
 <div class="proposal-card">
     <div class="rainbow-title">
+        <span class="letter">D</span>
         <span class="letter">A</span>
-        <span class="letter"></span>
-        <span class="letter">S</span>
-        <span class="letter">P</span>
+        <span class="letter">T</span>
         <span class="letter">E</span>
-        <span class="letter">C</span>
+        <span class="letter"></span>
         <span class="letter">I</span>
+        <span class="letter">N</span>
+        <span class="letter">V</span>
+        <span class="letter">I</span>
+        <span class="letter">T</span>
         <span class="letter">A</span>
-        <span class="letter">L</span>
-        <span class="letter"></span>
-        <span class="letter">Q</span>
-        <span class="letter">U</span>
-        <span class="letter">E</span>
-        <span class="letter">S</span>
         <span class="letter">T</span>
         <span class="letter">I</span>
         <span class="letter">O</span>
@@ -266,39 +316,51 @@
     </div>
 
     <div class="multi-color-text" style="font-size: 22px; margin: 5px 0 15px;">
-        <span class="c1">F</span>
+        <span class="c1">Y</span>
         <span class="c2">O</span>
-        <span class="c3">R</span>
-        <span class="c4"></span>
-        <span class="c5">Y</span>
-        <span class="c6">O</span>
-        <span class="c7">U</span>
-        <span class="c8"></span>
-        <span class="c1">W</span>
-        <span class="c2">I</span>
-        <span class="c3">T</span>
-        <span class="c4">H</span>
-        <span class="c5"></span>
-        <span class="c6">A</span>
-        <span class="c7">L</span>
-        <span class="c8">L</span>
-        <span class="c1"></span>
-        <span class="c2">M</span>
-        <span class="c3">Y</span>
-        <span class="c4"></span>
-        <span class="c5">H</span>
+        <span class="c3">U</span>
+        <span class="c4">'</span>
+        <span class="c5">R</span>
         <span class="c6">E</span>
-        <span class="c7">A</span>
-        <span class="c8">R</span>
-        <span class="c1">T</span>
+        <span class="c7"></span>
+        <span class="c8">I</span>
+        <span class="c1">N</span>
+        <span class="c2">V</span>
+        <span class="c3">I</span>
+        <span class="c4">T</span>
+        <span class="c5">E</span>
+        <span class="c6">D</span>
     </div>
 
     <div class="sub-message">
-        A QUESTION FROM THE HEART
+        ❤️ A SPECIAL DATE JUST FOR YOU ❤️
     </div>
 
     <div class="question" id="questionText">
-        WILL YOU BE MINE FOREVER?
+        WOULD YOU LIKE TO GO<br>ON A ROMANTIC DATE WITH ME?
+    </div>
+
+    <div class="date-details">
+        <div class="detail">
+            <span class="icon">📅</span>
+            <span class="label">Date:</span>
+            <span>This Saturday at 7:00 PM</span>
+        </div>
+        <div class="detail">
+            <span class="icon">📍</span>
+            <span class="label">Venue:</span>
+            <span>A Beautiful Candlelight Dinner</span>
+        </div>
+        <div class="detail">
+            <span class="icon">💝</span>
+            <span class="label">Surprise:</span>
+            <span>I have something special planned for you</span>
+        </div>
+        <div class="detail">
+            <span class="icon">🌹</span>
+            <span class="label">Dress Code:</span>
+            <span>Dress to impress (you always do!)</span>
+        </div>
     </div>
 
     <div class="button-group" id="buttonGroup">
@@ -309,14 +371,14 @@
     <div id="responseArea" class="response-area hidden">
         <div class="response-emoji-text" id="responseEmoji">💞</div>
         <div class="message" id="responseMessage">
-            <span class="highlight-yes">YES!</span> FOREVER AND ALWAYS!
+            <span class="highlight-yes">YES!</span> I CAN'T WAIT!
         </div>
-        <div class="sub" id="responseSub">You made me the happiest person alive</div>
+        <div class="sub" id="responseSub">It's going to be the most magical evening 🌹</div>
     </div>
 
     <div class="footer">
         <span>CLICK YES · NO RUNS AWAY</span>
-        <span class="span2">MADE WITH LOVE</span>
+        <span class="span2">MADE WITH LOVE ❤️</span>
     </div>
 </div>
 
@@ -330,6 +392,33 @@
         const responseEmoji = document.getElementById('responseEmoji');
         const questionText = document.getElementById('questionText');
         const originalQuestion = questionText.innerHTML;
+
+        function createHearts() {
+            const heartContainer = document.createElement('div');
+            heartContainer.className = 'floating-hearts';
+            document.body.appendChild(heartContainer);
+
+            const heartSymbols = ['❤️', '💕', '💗', '💖', '💞', '✨', '🌹', '💝'];
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                heart.style.fontSize = (Math.random() * 20 + 16) + 'px';
+                heartContainer.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 4000);
+            }
+
+            setTimeout(() => {
+                heartContainer.remove();
+            }, 4500);
+        }
 
         function fleeNoButton() {
             if (noBtn.disabled) return;
@@ -386,17 +475,17 @@
             fleeNoButton();
 
             if (!questionText.innerHTML.includes('CATCH')) {
-                questionText.innerHTML = 'CATCH ME IF YOU CAN!';
+                questionText.innerHTML = 'CATCH ME IF YOU CAN! 😄';
             }
 
             responseArea.classList.remove('hidden');
             responseEmoji.textContent = '🏃';
             responseMessage.innerHTML = '<span class="highlight-no">NO!</span> THE BUTTON IS FAST!';
-            responseSub.innerHTML = 'KEEP TRYING ... OR JUST SAY YES';
+            responseSub.innerHTML = 'KEEP TRYING ... OR JUST SAY YES ❤️';
 
             if (e && e.type === 'click') {
                 responseMessage.innerHTML = '<span class="highlight-no">ALMOST!</span> YOU CLICKED NO ... IT RAN AWAY!';
-                responseSub.innerHTML = 'PRESS YES, ITS THE ONLY WAY';
+                responseSub.innerHTML = 'PRESS YES, ITS THE ONLY WAY 💕';
                 noBtn.innerHTML = 'NO!';
             } else if (e && e.type === 'mouseover') {
                 noBtn.innerHTML = 'RUN';
@@ -412,8 +501,10 @@
 
             responseArea.classList.remove('hidden');
             responseEmoji.textContent = '💞';
-            responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> FOREVER AND ALWAYS!';
-            responseSub.innerHTML = 'You made me the happiest person alive';
+            responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> I CAN\'T WAIT!';
+            responseSub.innerHTML = 'It\'s going to be the most magical evening 🌹';
+
+            createHearts();
 
             noBtn.disabled = true;
             noBtn.style.opacity = '0.4';
@@ -421,7 +512,7 @@
             noBtn.style.pointerEvents = 'none';
             
             yesBtn.disabled = true;
-            yesBtn.innerHTML = 'DONE!';
+            yesBtn.innerHTML = 'DONE! ❤️';
             yesBtn.style.background = 'linear-gradient(135deg, #6c5ce7, #a29bfe)';
             yesBtn.style.boxShadow = '0 4px 0 #4834d4';
             yesBtn.style.cursor = 'default';
@@ -479,8 +570,8 @@
         yesBtn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
         yesBtn.style.boxShadow = '0 6px 25px rgba(0, 206, 201, 0.4)';
         responseEmoji.textContent = '💞';
-        responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> FOREVER AND ALWAYS!';
-        responseSub.innerHTML = 'You made me the happiest person alive';
+        responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> I CAN\'T WAIT!';
+        responseSub.innerHTML = 'It\'s going to be the most magical evening 🌹';
         questionText.innerHTML = originalQuestion;
     })();
 </script>
