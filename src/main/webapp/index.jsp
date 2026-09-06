@@ -390,9 +390,7 @@
         <span class="c7">G</span>
     </div>
 
-    <div class="sub-message">
-        ❤️ JUST BETWEEN THE TWO OF US ❤️
-    </div>
+    <div class="sub-message"> ❤️ A PRIVATE SEXUAL INVITATION ❤️ </div>
 
     <div class="question" id="questionText">
         WOULD YOU LIKE TO SPEND<br>
