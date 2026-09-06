@@ -226,6 +226,13 @@
         .multi-color-text .c7 { color: #00b894; }
         .multi-color-text .c8 { color: #e17055; }
 
+        /* Disabled button styles */
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
         @media (max-width: 550px) {
             .proposal-card { padding: 30px 20px; }
             .rainbow-title { font-size: 30px; }
@@ -239,7 +246,7 @@
 <body>
 
 <div class="proposal-card">
-    <!-- Multi-colored title with each letter different color -->
+    <!-- Multi-colored title -->
     <div class="rainbow-title">
         <span class="letter">A</span>
         <span class="letter"></span>
@@ -291,7 +298,7 @@
     </div>
 
     <div class="sub-message">
-        💕 A Question From The Heart 💕
+        A QUESTION FROM THE HEART
     </div>
 
     <div class="question" id="questionText">
@@ -304,11 +311,11 @@
     </div>
 
     <div id="responseArea" class="response-area hidden">
-        <div class="response-emoji-text">💞</div>
-        <div class="message">
+        <div class="response-emoji-text" id="responseEmoji">💞</div>
+        <div class="message" id="responseMessage">
             <span class="highlight-yes">YES!</span> A THOUSAND TIMES <span class="highlight-yes">YES!</span>
         </div>
-        <div class="sub">You made me the happiest person alive</div>
+        <div class="sub" id="responseSub">You made me the happiest person alive</div>
     </div>
 
     <div class="footer">
@@ -322,12 +329,13 @@
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
         const responseArea = document.getElementById('responseArea');
-        const responseMessage = document.querySelector('.message');
-        const responseSub = document.querySelector('.sub');
+        const responseMessage = document.getElementById('responseMessage');
+        const responseSub = document.getElementById('responseSub');
+        const responseEmoji = document.getElementById('responseEmoji');
         const questionText = document.getElementById('questionText');
-        const responseEmoji = document.querySelector('.response-emoji-text');
         const originalQuestion = questionText.innerHTML;
 
+        // Function to make NO button flee
         function fleeNoButton() {
             if (noBtn.disabled) return;
 
@@ -344,6 +352,7 @@
             let randomX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
             let randomY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
 
+            // Avoid overlapping with YES button
             const yesRect = yesBtn.getBoundingClientRect();
             const yesCenterX = yesRect.left + yesRect.width / 2;
             const yesCenterY = yesRect.top + yesRect.height / 2;
@@ -367,6 +376,7 @@
             noBtn.style.boxShadow = '0 8px 0 #e17055, 0 15px 35px rgba(0,0,0,0.2)';
         }
 
+        // Reset NO button position
         function resetNoButtonPosition() {
             noBtn.style.position = '';
             noBtn.style.left = '';
@@ -376,16 +386,20 @@
             noBtn.style.boxShadow = '';
         }
 
+        // Handle NO button interaction
         function handleNoInteraction(e) {
             if (noBtn.disabled) return;
             if (yesBtn.disabled && yesBtn.innerHTML.includes('DONE')) return;
 
+            // Flee!
             fleeNoButton();
 
+            // Update question text
             if (!questionText.innerHTML.includes('CATCH')) {
                 questionText.innerHTML = 'CATCH ME IF YOU CAN!';
             }
 
+            // Show response area
             responseArea.classList.remove('hidden');
             responseEmoji.textContent = '🏃';
             responseMessage.innerHTML = '<span class="highlight-no">NO!</span> THE BUTTON IS FAST!';
@@ -400,22 +414,27 @@
             }
         }
 
+        // Handle YES button click
         function handleYesClick(e) {
             e.preventDefault();
 
+            // Reset NO button to normal position
             resetNoButtonPosition();
             noBtn.innerHTML = 'NO';
             questionText.innerHTML = originalQuestion;
 
+            // Show acceptance response
             responseArea.classList.remove('hidden');
             responseEmoji.textContent = '💞';
             responseMessage.innerHTML = '<span class="highlight-yes">YES!</span> A THOUSAND TIMES <span class="highlight-yes">YES!</span>';
             responseSub.innerHTML = 'You made me the happiest person alive';
 
+            // Disable both buttons
             noBtn.disabled = true;
             noBtn.style.opacity = '0.4';
             noBtn.style.cursor = 'default';
             noBtn.style.pointerEvents = 'none';
+            
             yesBtn.disabled = true;
             yesBtn.innerHTML = 'DONE!';
             yesBtn.style.background = 'linear-gradient(135deg, #6c5ce7, #a29bfe)';
@@ -423,8 +442,10 @@
             yesBtn.style.cursor = 'default';
         }
 
+        // Event Listeners
         yesBtn.addEventListener('click', handleYesClick);
 
+        // NO button - click to flee
         noBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -432,12 +453,14 @@
             handleNoInteraction(e);
         });
 
+        // NO button - hover to flee
         noBtn.addEventListener('mouseover', function(e) {
             if (noBtn.disabled) return;
             if (yesBtn.disabled && yesBtn.innerHTML.includes('DONE')) return;
             handleNoInteraction(e);
         });
 
+        // Reset NO button text when mouse leaves
         noBtn.addEventListener('mouseleave', function() {
             if (noBtn.disabled) return;
             if (!noBtn.innerHTML.includes('CATCH')) {
@@ -445,6 +468,7 @@
             }
         });
 
+        // Keep fleeing button inside viewport on resize
         window.addEventListener('resize', function() {
             if (noBtn.style.position === 'fixed') {
                 const rect = noBtn.getBoundingClientRect();
@@ -462,8 +486,10 @@
             }
         });
 
+        // Prevent right-click on NO button
         noBtn.addEventListener('contextmenu', (e) => e.preventDefault());
 
+        // Initialize state
         responseArea.classList.add('hidden');
         resetNoButtonPosition();
         noBtn.disabled = false;
